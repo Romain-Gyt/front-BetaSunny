@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Plus besoin de @tailwind base, components, utilities ! */
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* En v4, pour appliquer des styles globaux au body : */
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
