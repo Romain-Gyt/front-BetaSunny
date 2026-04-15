@@ -8,6 +8,7 @@
   },
   "private": true,
   "dependencies": {
+    "@lucide/vue": "^1.8.0",
     "axios": "^1.13.0",
     "vue-sonner": "^2.0.9",
     "zod": "^4.3.6"
