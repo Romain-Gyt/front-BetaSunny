@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppLabel from "@/components/atoms/AppLabel.vue";
 import AppInput from "@/components/atoms/AppInput.vue";
+import {useId} from "vue";
 
 interface Props {
   label: string;
@@ -18,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const model = defineModel<string | number>();
 
-const uuid = `field-${Math.random().toString(36).slice(2, 9)}`;
+const uuid = useId();
 </script>
 
 <template>

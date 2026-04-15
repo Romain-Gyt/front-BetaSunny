@@ -15,15 +15,12 @@ const handleAzimutUpdate = (newValue: number) => {
 };
 
 const handleSpotSubmit = async (data: SpotRequest) => {
-  try {
     const response = await addSpot(data);
     if (response) {
       setTimeout(() => {
         router.push({ name: 'home' });
       }, 1000);
     }
-  } catch (error) {
-  }
 }
 
 const getAzimutDescription = (angle: number) => {

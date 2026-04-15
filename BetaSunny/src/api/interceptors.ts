@@ -26,11 +26,10 @@ export const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequ
  * INTERCEPTEUR DE RÉPONSE (SUCCÈS)
  */
 export const onResponse = (response: AxiosResponse) => {
-  const method = response.config.method?.toLowerCase() || '';
+ // const method = response.config.method?.toLowerCase() || '';
 
-  if (['post', 'put', 'delete'].includes(method)) {
-    console.log("On passe dans le succès de l'intercepteur");
-  }
+ //if (['post', 'put', 'delete'].includes(method)) {
+  //}
   return response;
 };
 /**
