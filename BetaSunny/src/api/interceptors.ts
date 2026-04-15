@@ -26,12 +26,13 @@ export const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequ
  * INTERCEPTEUR DE RÉPONSE (SUCCÈS)
  */
 export const onResponse = (response: AxiosResponse) => {
-  if (['post', 'put', 'delete'].includes(response.config.method || '')) {
-    toast.success('Action réussie !');
+  const method = response.config.method?.toLowerCase() || '';
+
+  if (['post', 'put', 'delete'].includes(method)) {
+    console.log("On passe dans le succès de l'intercepteur");
   }
   return response;
 };
-
 /**
  * INTERCEPTEUR D'ERREUR (LE CŒUR DU SYSTÈME)
  */

@@ -46,12 +46,17 @@ export function useSpots() {
     loading.value = true
     try {
       const newSpot = await spotService.createSpot(spot)
-      spots.value.push(normalize(newSpot))
-      success("Spot créé !", `Le spot ${newSpot.name} est désormais disponible.`);
-      return newSpot
+      const validatedSpot = normalize(newSpot)
+
+      spots.value.push(validatedSpot)
+
+      success("Spot créé !")
+
+      return validatedSpot
     } catch (err: any) {
-      // L'intercepteur gère déjà le toast, mais on peut mettre à jour l'état local
-      error.value = "Erreur lors de la création"
+      console.error("❌ Erreur de validation Zod :", err.errors);
+      console.error("Détails Zod :", err.format ? err.format() : err);
+      error.value = "Erreur de validation des données";
     } finally {
       loading.value = false
     }

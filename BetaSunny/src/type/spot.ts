@@ -21,7 +21,7 @@ export const spotRequestSchema = z.object({
 
 export const spotResponseSchema = spotRequestSchema.extend({
   id: z.number().positive(),
-  creadedAt: z.iso.datetime()
+  createdAt: z.string(),
 });
 
 export type SpotRequest = z.infer<typeof spotRequestSchema>;
